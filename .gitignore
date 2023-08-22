@@ -30,4 +30,4 @@ bd.py
 .history
 .ionide
 .vscode/launch.json
-bromoapp/.env
+.env
