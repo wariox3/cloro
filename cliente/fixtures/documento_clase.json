@@ -1,0 +1,7 @@
+[
+  {
+    "model": "cliente.documentoClase",
+    "pk": 1,
+    "fields": {"nombre": "Factura venta"}
+  }
+]

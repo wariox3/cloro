@@ -1,0 +1,7 @@
+[
+  {
+    "model": "cliente.pais",
+    "pk": "CO",
+    "fields": {"nombre": "Colombia", "codigo":"169"}
+  }
+]
