@@ -1,19 +1,11 @@
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status 
-from pymongo import MongoClient
-from decouple import config
-from azure.servicebus import ServiceBusClient, ServiceBusMessage
+from decouple import config 
 import xml.etree.ElementTree as ET
-from django.http import HttpResponse
-import json
-import datetime
 
+class Xml():
+    def __init__(self):
+        pass
 
-
-class GenerarView(APIView):
-    def post(self, request):  
-        raw = request.data        
+    def generar(self):              
         invoice = ET.Element("Invoice")
         invoice.set("xmlns", "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2")
         invoice.set("xmlns:cac", "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
@@ -727,6 +719,6 @@ N0DfUniabyrZ3nX+LG3UFL1VDtDPWrLTNKtb4wkKwGVwqtAdGFcE+/r/1WG0eQ64xCq0NLutCxg=
         xml_tree = ET.ElementTree(invoice)
         declaration = '<?xml version="1.0" encoding="UTF-8" standalone="no"?>'
         xml_content = declaration + ET.tostring(invoice, encoding='utf-8').decode('utf-8')
-        response = HttpResponse(xml_content, content_type="application/xml")
-        return response
-        #return Response({"documento:": "hola"}, status=status.HTTP_200_OK)                
+        #response = HttpResponse(xml_content, content_type="application/xml")
+        return xml_content
+        #return Response({"documento:": "hola"}, status=status.HTTP_200_OK)
